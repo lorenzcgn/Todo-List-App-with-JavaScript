@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>La mia lista</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Lilita+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/2d7d088a56.js" crossorigin="anonymous"></script>
+
+
+</head>
+<body>
+
+
+
+        <header class="container-head">
+                <div class="header">
+                        <div id="container-header">
+                                
+                                <h1>Benvenuto, spero che il mio tool ti piaccia.</h1>
+                                <h2>Si tratta di un semplice ma utile todolist in Javascript.</h2>
+                                <img src="https://www.hallofseries.com/wp-content/uploads/2017/02/mr-robot-meme.jpg" float="center" />
+                        </div>
+                    
+                        <div class="header-banner">
+                        </div>
+                        <nav class="transparentt">
+                            <ul>
+                                <li><a href="#container-header">Home</a></li>
+                                <li><a href="#sezione1">Aggiungi nota</a></li>
+                                <li><a href="#sezione2">Cerca fra le note</a></li>
+                                <li><a href="#sezione2">Modifica le tue note</a></li>
+                                <li><a href="#sezione3">Elimina tutte le note</a></li>
+                            <ul>
+                        </nav>
+                    </div>
+                </header>                  
+   
+    
+    <div class="container full">
+        <div class="row">
+
+            <div class="col s12">
+                <div id="main" class="card">
+                    <div class="card-content">
+                            <img src="https://glue-labs.com/wp-content/uploads/2019/06/2-1.png" float="center" width="80px" />
+                        <h1><span class="card-title"></span><span class="styling">LISTA</span>CAGNI</span></h1>
+                        <img id="sezione1"  src="https://cdn.pixabay.com/photo/2017/03/18/21/29/divider-2154993_960_720.png" float="center" width="200px" />
+
+                        <div class="row">
+                            <form id="task-form">
+                                <div class="input-field col s12">
+                                    <input type="text" name="task" id="task" >
+                                    <label for="task">Aggiungi una nuova nota</i></label>
+                                </div>
+                                <input type="submit" value="Aggiungi nota ➕" class="btn blacck">
+                            </form>
+                        </div>
+                    </div>
+                    <img id="sezione2" src="https://cdn.pixabay.com/photo/2017/03/18/21/29/divider-2154993_960_720.png" float="center" width="200px" />
+
+                    <div class="card-action">
+                        <h5 id="task-title">Le tue note <i class="fas fa-rocket"></i></h5>
+                        <div class="input-field col s12">
+                            <input type="text" name="filter" id="filter">
+                            <label for="filter">Cerca 🔍</label>
+                        </div>
+                        <ul class="collection">
+                        
+                        </ul>
+                        <div><img id="sezione3"  src="https://www.greenb.it/wp-content/uploads/2018/03/divider-linea-1.png" width="600px" float="center"/></div>
+                        <h5 id="task-title">Cancella tutte le note</h5>
+                        <a href="#" class="clear-tasks btn blacck">Cancella tutto 🗑️</a>
+                    </div>
+             
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+    <script src="app.js"></script>
+</body>
+    <img src="https://pngimage.net/wp-content/uploads/2018/05/bg-images-png.png" class="footer-img" width="1000px" />
+    <footer class="footer">
+
+    <div id="container-footer">
+        <p aligncontent="left" class="footerCopyright">Copyright © 2019-2020 · by Lorenzo Cagni & NZT-48 with ❤ in Italy | Privacy Policy </p>
+    </div>
+
+
+    </footer>
+    
+</html>
