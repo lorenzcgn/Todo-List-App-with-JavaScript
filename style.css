@@ -7,6 +7,9 @@
     margin-top: 1em;
     margin-bottom: 1em;
 }
+i.fas.fa-trash.hey {
+    color: white;
+}
 .transparentt {
     background-color: #caaa7e8a;
 }
