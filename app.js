@@ -9,9 +9,22 @@ const taskInput = document.querySelector('#task');
     else {
       const li = document.createElement('li');
       li.className ='collection-item greyyyy';
+      li.setAttribute("id", "notaSingola");
       li.appendChild(document.createTextNode(taskInput.value));
 
-      
+
+      var currentdate = new Date(); 
+      var datetime = " | Data: " + currentdate.getDate() + "/"
+                + (currentdate.getMonth()+1)  + "/" 
+                + currentdate.getFullYear() + " - "  
+                + currentdate.getHours() + ":"  
+                + currentdate.getMinutes() + ":" 
+                + currentdate.getSeconds();
+
+      const date = document.createElement('p');
+      date.className ='collection-item greyyyy date';
+      li.appendChild(document.createTextNode(datetime));
+
       
       const notaRimuovi = document.createElement('a');
       notaRimuovi.className = 'delete-item secondary-content';
@@ -36,6 +49,8 @@ const taskInput = document.querySelector('#task');
     }
     e.preventDefault();
     setFocus()
+
+    
 
 })
  

@@ -52,6 +52,11 @@ li.collection-item.greyyyy {
     color: #333;
 }
 
+collection-item.greyyyy.date{
+    font-size: smaller;
+    font-size: 10px;
+}
+
 .styling{
     font-weight: 800;
     color: #caaa7e;
