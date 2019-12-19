@@ -1,5 +1,24 @@
 const form = document.querySelector('#task-form');
- 
+//let i=0;
+
+/*'use strict';
+
+const body = document.body;
+const labelAdd = document.getElementById('js-label-add');
+const taskInput = document.getElementById('js-new-task');
+const buttonAdd = document.getElementById('js-add-button');
+const todoList = document.getElementById('js-incomplete-tasks');
+const todoHeader = document.getElementById('js-todo');
+const doneList = document.getElementById('js-completed-tasks');
+const doneHeader = document.getElementById('js-completed');
+let uncheckedTasks = todoList.querySelectorAll('input[type=checkbox]');
+let checkedTasks = doneList.querySelectorAll('input[type=checkbox]');
+const saveButton = document.getElementById("js-save");*/
+
+taskList = document.getElementById("js-save");
+
+
+
 // Aggiungi
 form.addEventListener('submit', function(e) {
 const taskInput = document.querySelector('#task');
@@ -7,10 +26,16 @@ const taskInput = document.querySelector('#task');
         alert('Scrivi qualcosa, non puoi aggiungere una nota vuota furbetto!');
     }
     else {
+    
+
       const li = document.createElement('li');
       li.className ='collection-item greyyyy';
       li.setAttribute("id", "notaSingola");
       li.appendChild(document.createTextNode(taskInput.value));
+
+      const notaContenuto = document.createElement('p');
+      notaContenuto.setAttribute("id", "notaContenuto");
+      notaContenuto.appendChild(document.createTextNode(taskInput.value));
 
 
       var currentdate = new Date(); 
@@ -21,10 +46,14 @@ const taskInput = document.querySelector('#task');
                 + currentdate.getMinutes() + ":" 
                 + currentdate.getSeconds();
 
+
+      const dataContenuto = document.createElement('p');
+      dataContenuto.setAttribute("id", "dataContenuto");
+      dataContenuto.appendChild(document.createTextNode(datetime));
+
       const date = document.createElement('p');
       date.className ='collection-item greyyyy date';
-      li.appendChild(document.createTextNode(datetime));
-
+      li.appendChild(document.createTextNode(datetime));    
       
       const notaRimuovi = document.createElement('a');
       notaRimuovi.className = 'delete-item secondary-content';
@@ -41,18 +70,69 @@ const taskInput = document.querySelector('#task');
       notaSvolta.innerHTML = '<i class="fas fa-check"> </i>';
       li.appendChild(notaSvolta);
 
-      const taskList = document.querySelector('.collection');
+
+      const taskList = document.querySelector('.collection');                    
       taskList.appendChild(li);
       taskList.className ='collection greyyyy';
       // pulizia input
       taskInput.value = '';
+      
+      console.log(notaContenuto.innerHTML + dataContenuto.innerHTML)
+      
     }
     e.preventDefault();
     setFocus()
-
     
 
 })
+
+/*
+// Local storage
+saveButton.addEventListener('click', () => {
+    localStorage.incompleteContent = todoList.innerHTML;
+    localStorage.completedContent = doneList.innerHTML;
+});
+
+if (localStorage.getItem('incompleteContent')) {
+  todoList.innerHTML = localStorage.getItem('incompleteContent');
+}
+
+if (localStorage.getItem('completedContent')) {
+  doneList.innerHTML = localStorage.getItem('completedContent');
+}
+
+*/
+
+// pulisci tutto
+const saveBtn = document.querySelector('.save-tasks');
+saveBtn.addEventListener('click', saveTasks);
+function saveTasks(){
+        const taskList = document.querySelector('.collection');
+        localStorage.lista = taskList.innerHTML;
+        setFocus()
+    }
+
+
+
+/*const myStorage = window.localStorage; 
+
+
+array.forEach(element => collection-item {
+        // Store
+        localStorage.setItem("contenuto", "Nota")
+        // Retrieve
+        document.getElementById("collection-item").innerHTML = localStorage.getItem("contenuto");
+    
+    
+    console.log(localStorage.getItem('contenuto'))    
+});
+
+function save(e){
+myStorage = window.localStorage; 
+let notaSingola =  document.getElementById("notaContenuto").innerHTML
+myStorage = notaSingola
+console.log(notaSingola)
+}*/
  
 // rimuovi
 const deleteNote = document.querySelector('.collection');
