@@ -1,22 +1,14 @@
-const form = document.querySelector('#task-form');
-//let i=0;
+const form = document.querySelector('#task-form')
 
-/*'use strict';
+/*var prova1 = { 'nota': 1, 'two': 2, 'three': 3 }
+// Put the object into storage
+localStorage.setItem('prova1', JSON.stringify(prova1))
+// Retrieve the object from storage
+var retrievedObject = localStorage.getItem('prova1')
 
-const body = document.body;
-const labelAdd = document.getElementById('js-label-add');
-const taskInput = document.getElementById('js-new-task');
-const buttonAdd = document.getElementById('js-add-button');
-const todoList = document.getElementById('js-incomplete-tasks');
-const todoHeader = document.getElementById('js-todo');
-const doneList = document.getElementById('js-completed-tasks');
-const doneHeader = document.getElementById('js-completed');
-let uncheckedTasks = todoList.querySelectorAll('input[type=checkbox]');
-let checkedTasks = doneList.querySelectorAll('input[type=checkbox]');
-const saveButton = document.getElementById("js-save");*/
+console.log('retrievedObject: ', JSON.parse(retrievedObject));*/
 
-taskList = document.getElementById("js-save");
-
+getAll()
 
 
 // Aggiungi
@@ -77,7 +69,8 @@ const taskInput = document.querySelector('#task');
       // pulizia input
       taskInput.value = '';
       
-      console.log(notaContenuto.innerHTML + dataContenuto.innerHTML)
+      //console.log(notaContenuto.innerHTML + dataContenuto.innerHTML)
+      saveAll(dataContenuto.innerHTML, notaContenuto.innerHTML)
       
     }
     e.preventDefault();
@@ -86,22 +79,6 @@ const taskInput = document.querySelector('#task');
 
 })
 
-/*
-// Local storage
-saveButton.addEventListener('click', () => {
-    localStorage.incompleteContent = todoList.innerHTML;
-    localStorage.completedContent = doneList.innerHTML;
-});
-
-if (localStorage.getItem('incompleteContent')) {
-  todoList.innerHTML = localStorage.getItem('incompleteContent');
-}
-
-if (localStorage.getItem('completedContent')) {
-  doneList.innerHTML = localStorage.getItem('completedContent');
-}
-
-*/
 
 // pulisci tutto
 const saveBtn = document.querySelector('.save-tasks');
@@ -113,26 +90,6 @@ function saveTasks(){
     }
 
 
-
-/*const myStorage = window.localStorage; 
-
-
-array.forEach(element => collection-item {
-        // Store
-        localStorage.setItem("contenuto", "Nota")
-        // Retrieve
-        document.getElementById("collection-item").innerHTML = localStorage.getItem("contenuto");
-    
-    
-    console.log(localStorage.getItem('contenuto'))    
-});
-
-function save(e){
-myStorage = window.localStorage; 
-let notaSingola =  document.getElementById("notaContenuto").innerHTML
-myStorage = notaSingola
-console.log(notaSingola)
-}*/
  
 // rimuovi
 const deleteNote = document.querySelector('.collection');
@@ -235,4 +192,33 @@ $(window).scroll(function(){
 
 function setFocus(e){
     $("#task").focus();
+}
+
+/*function saveAll(data, contenuto){
+    let src = contenuto + data
+    console.log(src)
+    src = JSON.stringify(src)
+    let all={
+        contenuto: contenuto,
+        data: data
+    }
+    console.log(all)
+    window.localStorage.box = all
+}*/
+
+function saveAll(){
+    let src = document.querySelectorAll('ul')
+    console.log(src)
+    src = JSON.stringify(src)
+    let all={
+        contenuto: contenuto,
+        data: data
+    }
+    console.log(all)
+    window.localStorage.box = all
+}
+
+function getAll(){
+    console.log(window.localStorage.box)
+    document.querySelectorAll('ul') = window.localStorage.box
 }
